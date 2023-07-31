@@ -20,19 +20,19 @@ The run_analysis.R script performs the data preparation and then followed by the
 * y_train <- test/y_train.txt :contains train data of activities’code labels
 
 3.Merges the training and the test sets to create one data set
-* X  is created by merging x_train and x_test using rbind() function
-* Y is created by merging y_train and y_test using rbind() function
-* Subject  is created by merging subject_train and subject_test using rbind() function
-* Merged_Data  is created by merging Subject, Y and X using cbind() function
+* x  is created by merging x_train and x_test using rbind() function
+* y is created by merging y_train and y_test using rbind() function
+* subject  is created by merging subject_train and subject_test using rbind() function
+* Merge_df  is created by merging subject, y and x using cbind() function
 
 4.Extracts only the measurements on the mean and standard deviation for each measurement
-        TidyData is created by subsetting Merged_Data, selecting only columns: subject, code and the measurements on the mean and standard deviation (std) for each measurement
+        Tidy_df is created by subsetting Merge_df, selecting only columns: subject, code and the measurements on the mean and standard deviation (std) for each measurement
 
 5.Uses descriptive activity names to name the activities in the data set
-        Entire numbers in code column of the TidyData replaced with corresponding activity taken from second column of the activities variable
+        Entire numbers in code column of the Tidy_df replaced with corresponding activity taken from second column of the activities variable
 
 6.Appropriately labels the data set with descriptive variable names:
-* code column in TidyData renamed into activities
+* code column in Tidy_df renamed into activities
 * All Acc in column’s name replaced by Accelerometer
 * All Gyro in column’s name replaced by Gyroscope
 *  All BodyBody in column’s name replaced by Body
@@ -41,5 +41,4 @@ The run_analysis.R script performs the data preparation and then followed by the
 * All start with character t in column’s name replaced by Time
 
 7.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
-* FinalData is created by sumarizing TidyData taking the means of each variable for each activity and each subject, after groupped by subject and activity.
-* Export FinalData into FinalTinyData.txt file.
+* Tidy_df2 is created by sumarizing Tidy_df taking the means of each variable for each activity and each subject, after groupped by subject and activity.
